@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8A93918E-C46B-43B9-989F-3C0518E3FADF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CrawlerVer2</RootNamespace>
+    <AssemblyName>CrawlerVer2</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BarcodeLib">
+      <HintPath>..\BarcodeLib\bin\Debug\BarcodeLib.dll</HintPath>
+    </Reference>
+    <Reference Include="BusinessRefinery.Barcode.Win">
+      <HintPath>..\QRCodeLibrary\BusinessRefinery.Barcode.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="Gma.QrCodeNet.Encoding.Net45">
+      <HintPath>..\QRcodeLib\Gma.QrCodeNet.Encoding.Net45.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes, Version=12.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="SaleToNight">
+      <HintPath>..\Channels\SaleToNight\bin\Debug\SaleToNight.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CManager.cs" />
+    <Compile Include="CrawlerVer2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrawlerVer2.Designer.cs">
+      <DependentUpon>CrawlerVer2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CrawlerVer2.resx">
+      <DependentUpon>CrawlerVer2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Channels\BaseChannel\BaseChannel.csproj">
+      <Project>{185D0B2C-8295-4F26-A61D-448A757F0A24}</Project>
+      <Name>BaseChannel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\Cangoto\Cangoto.csproj">
+      <Project>{89A72301-CE70-40CE-B68E-CEB6363D0970}</Project>
+      <Name>Cangoto</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\CJOClock\CJOClock.csproj">
+      <Project>{5B44EC66-E619-4D8A-96A3-D0F19D186AA8}</Project>
+      <Name>CJOClock</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\Coupang\Coupang.csproj">
+      <Project>{A3FC2B99-00CD-4154-A1D3-E9ABE0081562}</Project>
+      <Name>Coupang</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\eBay_Auction\eBay_Auction.csproj">
+      <Project>{ca96713a-43a2-4f84-b4b3-83751475d1e6}</Project>
+      <Name>eBay_Auction</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\eBay_G9\eBay_G9.csproj">
+      <Project>{cb456dcc-ad1f-40b2-9de2-e2547f10ffd1}</Project>
+      <Name>eBay_G9</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\EzWell\EzWell.csproj">
+      <Project>{1346D11F-7691-4EE7-A8FA-AF8F22DFBB4E}</Project>
+      <Name>EzWell</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\GoodByeSelly\GoodByeSelly.csproj">
+      <Project>{4FE83A6B-51AE-42F7-A2AD-E25CE0A99338}</Project>
+      <Name>GoodByeSelly</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\GSShop\GSShop.csproj">
+      <Project>{8FF174C7-3D5B-4D7D-8F3A-9056737EB263}</Project>
+      <Name>GSShop</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\LG\LG.csproj">
+      <Project>{4055929C-BE18-4530-A708-BCA169463A78}</Project>
+      <Name>LG</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\moms2Day\moms2Day.csproj">
+      <Project>{c860a467-d912-4729-b9b1-ed9489ed1caa}</Project>
+      <Name>moms2Day</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\MomSchool\MomSchool.csproj">
+      <Project>{6714DADA-DA98-40AC-BEDC-6C4441776C5C}</Project>
+      <Name>MomSchool</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\OneDayMom\OneDayMom.csproj">
+      <Project>{04FD8B13-C216-4565-BD1A-55D0F0533171}</Project>
+      <Name>OneDayMom</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\Street11\Street11\Street11.csproj">
+      <Project>{29E7E6AC-0BAF-40F8-AE6F-CA2E81C173C5}</Project>
+      <Name>Street11</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\Test\Test.csproj">
+      <Project>{EB03A07D-518D-4F4E-BCAC-D83E5F93D2A9}</Project>
+      <Name>Test</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\TicketMonster\TicketMonster.csproj">
+      <Project>{B0CA2FD0-FCB2-4AC3-87B6-52D2E7425258}</Project>
+      <Name>TicketMonster</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\TicketSuDa\TicketSuDa.csproj">
+      <Project>{176cc1db-28f3-4710-a532-fa1c35d26e02}</Project>
+      <Name>TicketSuDa</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\WeekOn\WeekOn\WeekOn.csproj">
+      <Project>{b1c161c7-5d9b-4f71-810d-fb892a1c3dea}</Project>
+      <Name>WeekOn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Channels\WeMakePrice\WeMakePrice.csproj">
+      <Project>{75A8A948-55DB-42E1-8591-F5A742A586FD}</Project>
+      <Name>WeMakePrice</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CrawlerShare\CrawlerShare.csproj">
+      <Project>{9CB9E064-1113-41D7-9EF3-AEF82969841A}</Project>
+      <Name>CrawlerShare</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\HKLibrary\HKLibrary.csproj">
+      <Project>{5DE327B1-73E3-4414-B5FB-E03FD4A66753}</Project>
+      <Name>HKLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LQStructures\LQStructures.csproj">
+      <Project>{0E90E056-B0A2-4E35-B7D9-EB1E701DB873}</Project>
+      <Name>LQStructures</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

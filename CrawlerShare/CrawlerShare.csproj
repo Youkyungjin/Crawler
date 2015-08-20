@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9CB9E064-1113-41D7-9EF3-AEF82969841A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CrawlerShare</RootNamespace>
+    <AssemblyName>CrawlerShare</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\Program Files\Microsoft Office\Office15\DCF\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.8.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Crawlers\LQCrawlerBase.cs" />
+    <Compile Include="Crawlers\LQCrawlerCJOShopping.cs" />
+    <Compile Include="Crawlers\LQCrawlerCoupang.cs" />
+    <Compile Include="Crawlers\LQCrawlereBay.cs" />
+    <Compile Include="Crawlers\LQCrawlerEleven.cs" />
+    <Compile Include="Crawlers\LQCrawlerETBS.cs" />
+    <Compile Include="Crawlers\LQCrawlerEzwel.cs" />
+    <Compile Include="Crawlers\LQCrawlerGoodByeSelly.cs" />
+    <Compile Include="Crawlers\LQCrawlerOnedayMom.cs" />
+    <Compile Include="Crawlers\LQCrawlerMomsToDay.cs" />
+    <Compile Include="Crawlers\LQCrawlerTicketSuDa.cs" />
+    <Compile Include="Crawlers\LQCrawlerTicketMonster.cs" />
+    <Compile Include="Crawlers\LQCrawlerWeMakePrice.cs" />
+    <Compile Include="Crawlers\LQCrawlerGSShop.cs" />
+    <Compile Include="Crawlers\LQCrawlerBabyWorld.cs" />
+    <Compile Include="Crawlers\LQCrawlerLG.cs" />
+    <Compile Include="Crawlers\LQCrawlerLotte.cs" />
+    <Compile Include="Crawlers\LQCrawlerLotteDotCom.cs" />
+    <Compile Include="Crawlers\LQCrawlerMomSchool.cs" />
+    <Compile Include="Crawlers\LQCrawlerCJOclock.cs" />
+    <Compile Include="Crawlers\LQCrawlerSaleToNight.cs" />
+    <Compile Include="Crawlers\LQCrawlerWeekOn.cs" />
+    <Compile Include="Crawlers\LQCrawlerCanGoTo.cs" />
+    <Compile Include="DB\DBFunctions.cs" />
+    <Compile Include="Managers\CrawlerInfoManager.cs" />
+    <Compile Include="Managers\CrawlerManager.cs" />
+    <Compile Include="Managers\DealStateManager.cs" />
+    <Compile Include="Managers\LogManager.cs" />
+    <Compile Include="Managers\OrderListManager.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HKLibrary\HKLibrary.csproj">
+      <Project>{5DE327B1-73E3-4414-B5FB-E03FD4A66753}</Project>
+      <Name>HKLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LQStructures\LQStructures.csproj">
+      <Project>{0E90E056-B0A2-4E35-B7D9-EB1E701DB873}</Project>
+      <Name>LQStructures</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
